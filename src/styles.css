@@ -114,6 +114,7 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  min-height: 0;
 }
 
 .chat-header {
@@ -146,6 +147,13 @@ body {
   color: #8a8681;
 }
 
+.message-feed-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+
 .message-feed {
   flex: 1;
   overflow-y: auto;
@@ -153,6 +161,22 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.new-messages-affordance {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #e8622c;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
 }
 
 .message-bubble {
