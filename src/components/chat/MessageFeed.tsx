@@ -1,22 +1,16 @@
 import React from "react";
+import type { ChatMessage } from "../../types/message";
 import MessageBubble from "./MessageBubble";
 
-const DUMMY_MESSAGES = [
-  { id: "1", text: "Hey! Are we still on for Friday?", isOwn: false, time: "10:02 AM" },
-  { id: "2", text: "Yes, definitely 🙌", isOwn: true, time: "10:03 AM" },
-  { id: "3", text: "Great, see you then!", isOwn: false, time: "10:03 AM" }
-];
+interface MessageFeedProps {
+  messages: ChatMessage[];
+}
 
-/**
- * Phase 2: static dummy conversation, just to prove the layout works.
- * Phase 3+ replaces this with the real reducer-driven message list, the
- * mock transport, auto-scroll logic, and typing indicators.
- */
-export default function MessageFeed(): React.ReactElement {
+export default function MessageFeed({ messages }: MessageFeedProps): React.ReactElement {
   return (
     <div className="message-feed" role="log" aria-label="Conversation">
-      {DUMMY_MESSAGES.map((msg) => (
-        <MessageBubble key={msg.id} text={msg.text} isOwn={msg.isOwn} time={msg.time} />
+      {messages.map((message) => (
+        <MessageBubble key={message.id} message={message} />
       ))}
     </div>
   );

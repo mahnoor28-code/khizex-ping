@@ -184,6 +184,14 @@ body {
   text-align: right;
 }
 
+.message-bubble__ticks {
+  margin-left: 0.35rem;
+}
+
+.message-bubble__ticks--read {
+  color: #7fd4ff;
+}
+
 /* ---- Input bar ---- */
 .chat-input-bar {
   display: flex;
